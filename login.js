@@ -4,7 +4,7 @@ const submit_btn = document.querySelector(`input[type="submit"]`);
 const faceID_button = document.querySelector('.faceID button');
 const faceID_is_varified = faceID_button.disabled;
 const notification_bar  = document.querySelector('.notification_bar');
-
+const notification_sound = document.querySelector('audio');
 
 
 //When input is focus
@@ -39,7 +39,7 @@ function ready_to_submit() {
 
 //Alert if system has internet connection
 const offline = `<p class="text-white font-bold text-center">Cannot login. Please Check your internet Connection </p>`;
-const online = `<p class="text-white font-bold text-center">Signing in... Connecting to server</p>`
+const online = `<p class="text-white font-bold text-center">Signing in... Connecting to server..</p>`
 
  form.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -48,7 +48,7 @@ const online = `<p class="text-white font-bold text-center">Signing in... Connec
     notification = document.createElement('div')
     notification_content = document.createElement('div')
     notification.setAttribute('class','notification p-2 mt-2 rounded-xl')
-
+   notification_sound.play()
     if (window.navigator.onLine) {
        notification.classList.add('bg-green-600')
        notification.classList.add('show')
@@ -73,3 +73,4 @@ const online = `<p class="text-white font-bold text-center">Signing in... Connec
     }
  
  })
+
