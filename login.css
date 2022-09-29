@@ -48,8 +48,13 @@ input{
     background-color: rgb(222, 222, 226);
 }
 
+input[type="submit"]:disabled{
+    background-color: rgb(222, 222, 226);
+    cursor: not-allowed;
+}
 
-@media only screen and (min-width: 400px) {
+
+@media only screen and (min-width: 445px) {
     .inputDiv{
         width: 11cm;
     }
