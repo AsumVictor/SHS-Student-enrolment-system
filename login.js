@@ -21,6 +21,7 @@ function When_to_type(){
     }
 
 //allow the login button when all input is not empty
+
 function ready_to_submit() {
         if(inputs[0].value != "" && inputs[1].value != "" && inputs[2].value != "" && faceID_is_varified==true){
             submit_btn.disabled=false;
@@ -29,16 +30,16 @@ function ready_to_submit() {
             }
 }
 
-setInterval(ready_to_submit,10)
 
     inputs.forEach(input => {
     input.addEventListener("focus", When_to_type);
     input.addEventListener("blur", When_not_typing);
+    input.addEventListener("keyup", ready_to_submit);
     });
 
 //Alert if system has internet connection
 const offline = `<p class="text-white font-bold text-center">Cannot login. Please Check your internet Connection </p>`;
-const online = `<p class="text-white font-bold text-center">Connection. Lo gin Not available now</p>`
+const online = `<p class="text-white font-bold text-center">Signing in... Connecting to server</p>`
 
  form.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -47,18 +48,28 @@ const online = `<p class="text-white font-bold text-center">Connection. Lo gin N
     notification = document.createElement('div')
     notification_content = document.createElement('div')
     notification.setAttribute('class','notification p-2 mt-2 rounded-xl')
+
     if (window.navigator.onLine) {
        notification.classList.add('bg-green-600')
        notification.classList.add('show')
        notification_content.innerHTML = online;
        notification.appendChild(notification_content)
        notification_bar.appendChild(notification)
+       inputs.forEach(input => {
+        input.disabled=true;
+        input.parentNode.style.borderColor= '#bdbbd3';
+        input.parentNode.style.color= '#bdbbd3';
+       });
+       submit_btn.disabled= true;
     } else {
         notification.classList.add('bg-red-600')
         notification.classList.add('show')
         notification_content.innerHTML = offline;
         notification.appendChild(notification_content)
         notification_bar.appendChild(notification)
-
+        setTimeout(()=>{
+            notification_bar.removeChild(notification)
+        },1200)
     }
+ 
  })

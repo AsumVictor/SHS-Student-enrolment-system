@@ -53,7 +53,10 @@ input[type="submit"]:disabled{
     background-color: rgb(222, 222, 226);
     cursor: not-allowed;
 }
-
+.notification_bar{
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
 .notification{
     height: auto;
     width: auto;
@@ -61,7 +64,7 @@ input[type="submit"]:disabled{
     overflow: hidden;
 }
 .notification.show{
-    animation: popup .5s forwards;
+    animation: popup .25s forwards;
 }
 
 @keyframes popup {
