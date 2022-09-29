@@ -18,25 +18,32 @@
         <!-- Form here -->
         <form action="#" class="flex flex-col items-center w-full">
          
-            <div class="inputDiv border-4 rounded-2xl p-2 px-5 flex items-center relative">           
-                      <span>School Br Code</span>
+            <div class="inputDiv mt-4 border-4 rounded-2xl p-2 px-5 flex items-center relative">           
+                      <span class="p-1 font-bold text-lightDarkBlue">School Br Code</span>
                       <input id="schoolCode" name="schoolCode" type="number" 
-                             class="input w-full h-full absolute bg-transparent outline-none px-5" required>
+                             class="input font-bold text-lightDarkBlue w-full h-full absolute bg-transparent outline-none px-5" required>
              </div>
 
-            <div class="inputDiv border-4 rounded-2xl p-2 px-5 flex items-center relative">           
-                     <span>Admin Code</span>
+            <div class="inputDiv mt-4 border-4 rounded-2xl p-2 px-5 flex items-center relative">           
+                     <span class="p-1 font-bold text-lightDarkBlue">Admin Code</span>
                      <input id="adminCode<" name="adminCode<" type="number" 
-                       class="input w-full h-full absolute bg-transparent outline-none px-5" required>
+                       class="input font-bold text-lightDarkBlue w-full h-full absolute bg-transparent outline-none px-5" required>
              </div>
 
-            <div class="inputDiv border-4 rounded-2xl p-2 px-5 flex items-center relative">           
-                <span>Password</span>
-                <input id="adminCode<" name="adminCode<" type="password" 
-                  class="input w-full h-full absolute bg-transparent outline-none px-5" required>
+            <div class="inputDiv mt-4 border-4 rounded-2xl p-2 px-5 flex items-center relative">           
+                     <span class="p-1 font-bold text-lightDarkBlue">Password</span>
+                     <input id="adminCode<" name="adminCode<" type="password" 
+                       class="input font-bold text-lightDarkBlue w-full h-full absolute bg-transparent outline-none px-5" required>
              </div>
     
         </form>
+             
+         <div class="faceID mt-2 flex flex-row items-center">
+            <span>Face Varification: </span>
+            <button class="varificationFailed mx-2 p-1 font-bold rounded-xl">
+                Failed. Try gain
+            </button>
+         </div>
 
     </div>
     

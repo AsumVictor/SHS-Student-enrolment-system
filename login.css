@@ -18,11 +18,36 @@ body{
 .inputDiv{
     width: 90%;
 }
+.inputDiv.focus{
+    border-color: #0d036b;
+}
+.inputDiv span{
+    background-color: white;
+}
+
+.inputDiv.focus span{
+    transform: translateY(-.68cm);
+}
+
 
 input{
     top:0px;
     left:0px;
 }
+
+.faceID button{
+    background-color: rgb(73, 73, 158);
+    color: white;
+}
+.faceID button:disabled{
+    color: rgb(21, 141, 21);
+    background-color: transparent;
+}
+.faceID button.varificationFailed{
+    color: rgb(255, 0, 0);
+    background-color: rgb(222, 222, 226);
+}
+
 
 @media only screen and (min-width: 400px) {
     .inputDiv{
