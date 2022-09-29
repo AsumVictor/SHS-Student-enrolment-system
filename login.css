@@ -18,3 +18,14 @@ body{
 .inputDiv{
     width: 90%;
 }
+
+input{
+    top:0px;
+    left:0px;
+}
+
+@media only screen and (min-width: 400px) {
+    .inputDiv{
+        width: 11cm;
+    }
+  }
