@@ -2,6 +2,8 @@
 <html lang="english">
  <head>
   <meta charset="UTF-8">
+  <title>Log In Admin || bsro</title>
+  <link rel="shortcut icon" href="images/adminLogo.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
@@ -35,18 +37,19 @@
                      <input id="adminCode" name="adminCode" type="password" 
                        class="input font-bold text-lightDarkBlue w-full h-full absolute bg-transparent outline-none px-5" required>
              </div>
+
+             <div class="faceID mt-2 flex flex-row items-center">
+                <span>Face Varification: </span>
+                <button class=" mx-2 p-1 font-bold rounded-xl" disabled>
+                    <i class="fa fa-check-circle"></i> Varified
+                </button>
+             </div>
+    
+             <input type="submit" value="Log in" class="px-9 py-3 rounded-xl bg-lightDarkBlue
+                                                        text-white font-bold cursor-pointer mt-4" disabled>
     
         </form>
              
-         <div class="faceID mt-2 flex flex-row items-center">
-            <span>Face Varification: </span>
-            <button class=" mx-2 p-1 font-bold rounded-xl" disabled>
-                <i class="fa fa-check-circle"></i> Varified
-            </button>
-         </div>
-
-         <input type="submit" value="Log in" class="px-9 py-3 rounded-xl bg-lightDarkBlue
-                                                    text-white font-bold cursor-pointer mt-4" disabled>
           
          <a href="#" class="mt-4 underline text-blue-800">Don't have an account yet.</a>
                 
