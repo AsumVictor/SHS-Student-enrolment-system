@@ -54,6 +54,42 @@ input[type="submit"]:disabled{
     cursor: not-allowed;
 }
 
+.notification{
+    height: auto;
+    width: auto;
+    transform: translateY(-120%);
+    overflow: hidden;
+}
+.notification.show{
+    animation: popup .5s forwards;
+}
+
+@keyframes popup {
+    0%{transform: translateY(-120%);
+        height: .1cm;
+        width: 2cm;}
+    40%{
+        transform: translateY(-20%);
+        height: .1cm;
+        width: 4cm;
+    }
+    50%{
+        transform: translateY(10%) scale(1.02);
+        height: auto;
+        width: auto;
+    }
+    60%{
+        transform: translateY(0%) scale(0.96);
+        height: auto;
+        width: auto;
+    }
+    100%{
+        transform: translateY(10%) scale(1.02);
+        height: auto;
+        width: auto;
+    }
+}
+
 
 @media only screen and (min-width: 445px) {
     .inputDiv{
