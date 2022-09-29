@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.loginBox {
+    width: 100%;
+}
+
+.icon{
+    height: 2.6cm;
+    width: 2.6cm;
+}
+
+.inputDiv{
+    width: 90%;
+}
