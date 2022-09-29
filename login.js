@@ -1,7 +1,10 @@
+const form = document.querySelector('form');
 const inputs = document.querySelectorAll(".input");
 const submit_btn = document.querySelector(`input[type="submit"]`);
 const faceID_button = document.querySelector('.faceID button');
 const faceID_is_varified = faceID_button.disabled;
+const notification_bar  = document.querySelector('.notification_bar');
+
 
 
 //When input is focus
@@ -34,3 +37,28 @@ setInterval(ready_to_submit,10)
     });
 
 //Alert if system has internet connection
+const offline = `<p class="text-white font-bold text-center">Cannot login. Please Check your internet Connection </p>`;
+const online = `<p class="text-white font-bold text-center">Connection. Lo gin Not available now</p>`
+
+ form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    let notification;
+    let notification_content;
+    notification = document.createElement('div')
+    notification_content = document.createElement('div')
+    notification.setAttribute('class','notification p-2 mt-2 rounded-xl')
+    if (window.navigator.onLine) {
+       notification.classList.add('bg-green-600')
+       notification.classList.add('show')
+       notification_content.innerHTML = online;
+       notification.appendChild(notification_content)
+       notification_bar.appendChild(notification)
+    } else {
+        notification.classList.add('bg-red-600')
+        notification.classList.add('show')
+        notification_content.innerHTML = offline;
+        notification.appendChild(notification_content)
+        notification_bar.appendChild(notification)
+
+    }
+ })
