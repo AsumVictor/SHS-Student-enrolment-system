@@ -32,3 +32,5 @@ setInterval(ready_to_submit,10)
     input.addEventListener("focus", When_to_type);
     input.addEventListener("blur", When_not_typing);
     });
+
+//Alert if system has internet connection
