@@ -2,10 +2,8 @@ const form = document.querySelector('form');
 const inputs = document.querySelectorAll(".input");
 const submit_btn = document.querySelector(`input[type="submit"]`);
 const faceID_button = document.querySelector('.faceID button');
-const faceID_is_varified = faceID_button.disabled;
 const notification_bar  = document.querySelector('.notification_bar');
 const notification_sound = document.querySelector('audio');
-
 
 //When input is focus
 function When_to_type(){
@@ -23,8 +21,8 @@ function When_to_type(){
 //allow the login button when all input is not empty
 
 function ready_to_submit() {
-        if(inputs[0].value != "" && inputs[1].value != "" && inputs[2].value != "" && faceID_is_varified==true){
-            submit_btn.disabled=false;
+       if(inputs[0].value != "" && inputs[1].value != "" && inputs[2].value != "" && faceID_button.classList.contains('verified')){
+            submit_btn.disabled=false; 
             }else{
                 submit_btn.disabled=true;
             }
@@ -48,7 +46,6 @@ const online = `<p class="text-white font-bold text-center">Signing in... Connec
     notification = document.createElement('div')
     notification_content = document.createElement('div')
     notification.setAttribute('class','notification p-2 mt-2 rounded-xl')
-   notification_sound.play()
     if (window.navigator.onLine) {
        notification.classList.add('bg-green-600')
        notification.classList.add('show')
@@ -71,6 +68,40 @@ const online = `<p class="text-white font-bold text-center">Signing in... Connec
             notification_bar.removeChild(notification)
         },1200)
     }
+
  
  })
+ faceID_button.addEventListener('click',(e)=>{
+  e.preventDefault();
+})
+faceID_button.addEventListener('click',()=>{ 
+    let decisions = [1,0,0,0,1,0,0,0,1,0,0,0,1,0,1,0,0,0,1,0,1,0,0,0,0,0,0]
+    let pick = (Math.random()* decisions.length).toFixed(0);
+       
+   console.log('Face button Clicked');
+   const video_container = document.createElement('div');
+   video_container.setAttribute('class','video_container fixed flex text-center items-center justify-center text-3xl md:text-5xl')
+   video_container.textContent= 'VERIFYING. . .'
+   document.body.appendChild(video_container)
+   faceID_button.classList.remove('varificationFailed')
+    setTimeout(() => {
+        document.body.removeChild(video_container)
+        if (decisions[pick]==1) {
+            faceID_button.innerHTML= `<i class="fa fa-check-circle"></i> Verified`;
+            faceID_button.classList.remove('varificationFailed')
+            faceID_button.disabled=true;
+            faceID_button.classList.add('verified')
+            ready_to_submit(); 
+       } else {
+            faceID_button.classList.remove('verified')
+            faceID_button.textContent= 'Failed. Try again';
+            faceID_button.classList.add('varificationFailed')
+            ready_to_submit(); 
+       }
+    },2000);
 
+})
+
+
+
+ 

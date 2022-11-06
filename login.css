@@ -35,20 +35,45 @@ input{
     top:0px;
     left:0px;
 }
-
-.faceID button{
+.faceID_btn{
     background-color: rgb(73, 73, 158);
     color: white;
+    transform: translateX(0px); position: relative;
 }
-.faceID button:disabled{
-    color: rgb(21, 141, 21);
+ .faceID_btn.verified{
+    color: #158d15;
     background-color: transparent;
+ 
 }
-.faceID button.varificationFailed{
+.faceID_btn.varificationFailed{
     color: rgb(255, 0, 0);
     background-color: rgb(222, 222, 226);
+    animation: verifying_failed .2s forwards;
+}
+ 
+@keyframes verifying_failed {
+    0%{transform: translateX(0px);}
+    2%{transform: translateX(5px);}
+    32%{transform: translateX(-5px);}
+    64%{transform: translateX(5px);}
+    96%{transform: translateX(-5px);}
+    100%{transform: translateX(0px);}
+}
+ 
+ 
+ 
+.video_container{
+   position: fixed;
+   width: 100%;
+   background-color: black;
+   top: 0px;
+   left: 0px;
+   animation: video_close 4s ease-in infinite;
+   color: white;
+   height: 100%;
 }
 
+ 
 input[type="submit"]:disabled{
     background-color: rgb(222, 222, 226);
     cursor: not-allowed;
